@@ -1,5 +1,6 @@
 package com.cuatro.cursoboot.controller;
 
+import com.cuatro.cursoboot.constants.ViewConstant;
 import com.cuatro.cursoboot.model.UserCredential;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -30,7 +31,7 @@ public class LoginController {
     model.addAttribute("userCredentials",new UserCredential());
     model.addAttribute("error",error);
     model.addAttribute("logout",logout);
-    return "login";
+    return ViewConstant.LOGIN;
   }
 
   @PostMapping("login-check")
@@ -38,7 +39,7 @@ public class LoginController {
     LOG.info("METHOD: login-check -- PARAMS: "+credentials.toString());
     if (credentials.getUserName().equals("user") && credentials.getPassword().equals("user")) {
       //Página principal
-      return "contacts";
+      return ViewConstant.CONTACTS;
     } else {
       return ("redirect:/login?error");
     }

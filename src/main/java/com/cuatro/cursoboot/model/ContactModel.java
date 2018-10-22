@@ -60,5 +60,15 @@ public class ContactModel {
   public ContactModel() {
   }
 
+  @Override
+  public String toString() {
+    return "ContactModel{" +
+            "id=" + id +
+            ", city='" + city + '\'' +
+            ", firstName='" + firstName + '\'' +
+            ", lastName='" + lastName + '\'' +
+            ", telephone='" + telephone + '\'' +
+            '}';
+  }
 }
 
